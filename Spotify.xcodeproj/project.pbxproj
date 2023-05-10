@@ -78,12 +78,12 @@
 		FA10E4722A0BE8F300FB3404 = {
 			isa = PBXGroup;
 			children = (
-				FA10E4C02A0C153300FB3404 /* .gitignore */,
-				FA10E4BE2A0C14FF00FB3404 /* README.md */,
-				FA10E4BD2A0C09A200FB3404 /* Debug.example.xcconfig */,
-				FA10E4BC2A0C083200FB3404 /* Debug.xcconfig */,
 				FA10E47C2A0BE8F300FB3404 /* Products */,
 				FA10E47D2A0BE8F300FB3404 /* Spotify */,
+				FA10E4C02A0C153300FB3404 /* .gitignore */,
+				FA10E4BD2A0C09A200FB3404 /* Debug.example.xcconfig */,
+				FA10E4BC2A0C083200FB3404 /* Debug.xcconfig */,
+				FA10E4BE2A0C14FF00FB3404 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,12 +98,12 @@
 		FA10E47D2A0BE8F300FB3404 /* Spotify */ = {
 			isa = PBXGroup;
 			children = (
+				FA10E4922A0BEBE200FB3404 /* Controllers */,
 				FA10E4972A0BEC1700FB3404 /* Managers */,
-				FA10E4962A0BEC0E00FB3404 /* Resources */,
 				FA10E4952A0BEC0500FB3404 /* Models */,
+				FA10E4962A0BEC0E00FB3404 /* Resources */,
 				FA10E4942A0BEBF800FB3404 /* ViewModels */,
 				FA10E4932A0BEBF000FB3404 /* Views */,
-				FA10E4922A0BEBE200FB3404 /* Controllers */,
 				FA10E48C2A0BE8F400FB3404 /* Info.plist */,
 			);
 			path = Spotify;
@@ -112,17 +112,17 @@
 		FA10E4922A0BEBE200FB3404 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA10E4822A0BE8F300FB3404 /* HomeViewController.swift */,
-				FA10E4982A0BF19200FB3404 /* TabBarViewController.swift */,
-				FA10E49A2A0BF1D000FB3404 /* SearchViewController.swift */,
-				FA10E49C2A0BF1F300FB3404 /* LibraryViewController.swift */,
 				FA10E4A02A0BF2B700FB3404 /* AuthViewController.swift */,
-				FA10E4A22A0BF2C800FB3404 /* WelcomeViewController.swift */,
-				FA10E4A42A0BF33000FB3404 /* SettingsViewController.swift */,
-				FA10E4A62A0BF33B00FB3404 /* ProfileViewController.swift */,
+				FA10E4822A0BE8F300FB3404 /* HomeViewController.swift */,
+				FA10E49C2A0BF1F300FB3404 /* LibraryViewController.swift */,
 				FA10E4A82A0BF34900FB3404 /* PlayerViewController.swift */,
 				FA10E4AA2A0BF35500FB3404 /* PlaylistViewController.swift */,
+				FA10E4A62A0BF33B00FB3404 /* ProfileViewController.swift */,
 				FA10E4AC2A0BF36B00FB3404 /* SearchResultsViewController.swift */,
+				FA10E49A2A0BF1D000FB3404 /* SearchViewController.swift */,
+				FA10E4A42A0BF33000FB3404 /* SettingsViewController.swift */,
+				FA10E4982A0BF19200FB3404 /* TabBarViewController.swift */,
+				FA10E4A22A0BF2C800FB3404 /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -145,9 +145,9 @@
 		FA10E4952A0BEC0500FB3404 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA10E4B42A0BF3E000FB3404 /* Playlist.swift */,
-				FA10E4B62A0BF3F400FB3404 /* AudioTrack.swift */,
 				FA10E4B82A0BF40800FB3404 /* Artist.swift */,
+				FA10E4B62A0BF3F400FB3404 /* AudioTrack.swift */,
+				FA10E4B42A0BF3E000FB3404 /* Playlist.swift */,
 				FA10E4BA2A0BF41500FB3404 /* Profile.swift */,
 			);
 			path = Models;
@@ -157,8 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				FA10E47E2A0BE8F300FB3404 /* AppDelegate.swift */,
-				FA10E4802A0BE8F300FB3404 /* SceneDelegate.swift */,
 				FA10E4872A0BE8F400FB3404 /* Assets.xcassets */,
+				FA10E4802A0BE8F300FB3404 /* SceneDelegate.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -166,8 +166,8 @@
 		FA10E4972A0BEC1700FB3404 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				FA10E4AE2A0BF38700FB3404 /* AuthManager.swift */,
 				FA10E4B02A0BF3AC00FB3404 /* APIClient.swift */,
+				FA10E4AE2A0BF38700FB3404 /* AuthManager.swift */,
 				FA10E4B22A0BF3C000FB3404 /* HapticsManager.swift */,
 			);
 			path = Managers;
