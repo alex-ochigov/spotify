@@ -16,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = TabBarViewController()
+        
+        if !AuthManager.shared.isSigned {
+            let welcomeVC = UINavigationController(rootViewController: WelcomeViewController())
+            welcomeVC.navigationBar.prefersLargeTitles = true
+            welcomeVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+            window.rootViewController = welcomeVC
+        } else {
+            window.rootViewController = TabBarViewController()
+        }
+
         window.makeKeyAndVisible()
         self.window = window
         
