@@ -10,6 +10,9 @@ import Foundation
 final class AuthManager {
     static let shared = AuthManager()
     
+    let clientId = Bundle.main.object(forInfoDictionaryKey: "CLIENT_ID") as! String
+    let clientSecret = Bundle.main.object(forInfoDictionaryKey: "CLIENT_SECRET") as! String
+    
     private init() {}
     
     var isSigned: Bool {

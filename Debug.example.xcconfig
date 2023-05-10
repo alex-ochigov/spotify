@@ -1,0 +1,11 @@
+//
+//  Debug.example.xcconfig
+//  Spotify
+//
+//  Created by Alex Ochigov on 5/10/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+CLIENT_ID = YOUR CLIENT ID
+CLIENT_SECRET = YOUR CLIENT SECRET
