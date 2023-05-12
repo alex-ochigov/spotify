@@ -44,14 +44,23 @@ class WelcomeViewController: UIViewController {
             DispatchQueue.main.async {
                 self?.handleSignIn(success: success)
             }
-
+            
         }
         authVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(authVC, animated: true)
     }
     
     private func handleSignIn(success: Bool) {
-        // log in user
+        guard success else {
+            let alert = UIAlertController(title: "Error", message: "Something went wrong", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+            present(alert, animated: true)
+            return
+        }
+        
+        let mainAppTabBarVC = TabBarViewController()
+        mainAppTabBarVC.modalPresentationStyle = .fullScreen
+        present(mainAppTabBarVC, animated: true)
     }
     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0DC2022A0E6D62005E4CB7 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0DC2012A0E6D62005E4CB7 /* AuthResponse.swift */; };
 		FA10E47F2A0BE8F300FB3404 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E47E2A0BE8F300FB3404 /* AppDelegate.swift */; };
 		FA10E4812A0BE8F300FB3404 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E4802A0BE8F300FB3404 /* SceneDelegate.swift */; };
 		FA10E4832A0BE8F300FB3404 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E4822A0BE8F300FB3404 /* HomeViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0DC2012A0E6D62005E4CB7 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		FA10E47B2A0BE8F300FB3404 /* Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA10E47E2A0BE8F300FB3404 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA10E4802A0BE8F300FB3404 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				FA10E4B62A0BF3F400FB3404 /* AudioTrack.swift */,
 				FA10E4B42A0BF3E000FB3404 /* Playlist.swift */,
 				FA10E4BA2A0BF41500FB3404 /* Profile.swift */,
+				FA0DC2012A0E6D62005E4CB7 /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				FA10E4A32A0BF2C800FB3404 /* WelcomeViewController.swift in Sources */,
 				FA10E4A72A0BF33B00FB3404 /* ProfileViewController.swift in Sources */,
 				FA10E4992A0BF19200FB3404 /* TabBarViewController.swift in Sources */,
+				FA0DC2022A0E6D62005E4CB7 /* AuthResponse.swift in Sources */,
 				FA10E4B32A0BF3C000FB3404 /* HapticsManager.swift in Sources */,
 				FA10E4B72A0BF3F400FB3404 /* AudioTrack.swift in Sources */,
 				FA10E4C42A0C1BD300FB3404 /* UIView.swift in Sources */,
