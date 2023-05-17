@@ -11,3 +11,5 @@
 - Rename `Debug.example.xcconfig` to `Debug.xcconfig`
 - Update `CLIENT_ID` and `CLIENT_SECRET`
 
+### Pods
+- run `pod install`
