@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -82,6 +83,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         models.append("Full Name: \(model.display_name)")
         models.append("Email: \(model.email)")
         models.append("Plan: \(model.product)")
+        createTableHeader(with: model.images.first??.url)
         tableView.reloadData()
     }
     
@@ -93,6 +95,26 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         view.addSubview(label)
         label.center = view.center
+    }
+    
+    private func createTableHeader(with image: String?) {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.width, height: view.width / 1.5))
+        let imageSize: CGFloat = headerView.height / 2
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: imageSize, height: imageSize))
+        
+        headerView.addSubview(imageView)
+        imageView.center = headerView.center
+        
+        if let imageURL = image, let url = URL(string: imageURL) {
+            imageView.sd_setImage(with: url, completed: nil)
+            imageView.contentMode = .scaleAspectFill
+            imageView.layer.masksToBounds = true
+            imageView.layer.cornerRadius = imageSize / 2
+        } else {
+            imageView.sd_setImage(with: nil, placeholderImage: UIImage(systemName: "person"))
+        }
+        
+        tableView.tableHeaderView = headerView
     }
     
     // MARK: - tableView
