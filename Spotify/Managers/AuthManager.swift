@@ -10,6 +10,8 @@ import Foundation
 final class AuthManager {
     static let shared = AuthManager()
     
+    private var isTokenRefreshing = false
+    
     let clientId = Bundle.main.object(forInfoDictionaryKey: "CLIENT_ID") as! String
     let clientSecret = Bundle.main.object(forInfoDictionaryKey: "CLIENT_SECRET") as! String
     let tokenAPIUrl = "https://accounts.spotify.com/api/token"
@@ -82,7 +84,26 @@ final class AuthManager {
         task.resume()
     }
     
+    private var onRefreshBlocks = [((String) -> Void)]()
+    
+    public func withValidToken(completion: @escaping (String) -> Void) {
+        guard !isTokenRefreshing else {
+            onRefreshBlocks.append(completion)
+            return
+        }
+        
+        refreshTokenIfNeeded { [weak self] success in
+            if let token = self?.accessToken, success {
+                completion(token)
+            }
+        }
+    }
+    
     public func refreshTokenIfNeeded(completion: @escaping (Bool) -> Void) {
+        guard !isTokenRefreshing else {
+            return
+        }
+        
         guard shouldRefreshToken else {
             completion(true)
             return
@@ -98,6 +119,8 @@ final class AuthManager {
             return
         }
         
+        isTokenRefreshing = true
+        
         var components = URLComponents()
         components.queryItems = [
             URLQueryItem(name: "grant_type", value: "refresh_token"),
@@ -111,6 +134,8 @@ final class AuthManager {
         request.httpBody = components.query?.data(using: .utf8)
         
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
+            self?.isTokenRefreshing = false
+            
             guard let data = data, error == nil else {
                 completion(false)
                 return
@@ -120,6 +145,8 @@ final class AuthManager {
             do {
                 let result = try JSONDecoder().decode(AuthResponse.self, from: data)
                 
+                self?.onRefreshBlocks.forEach { $0(result.access_token) }
+                self?.onRefreshBlocks.removeAll()
                 self?.cacheToken(result: result)
                 completion(true)
             } catch {
