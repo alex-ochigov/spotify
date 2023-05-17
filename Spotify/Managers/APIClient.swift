@@ -23,7 +23,7 @@ final class APIClient {
     private init() {}
     
     public func getCurrentUserProfile(completion: @escaping (Result<UserProfile, Error>) -> Void) {
-        run(with: base.appending(path: "/me"), type: .GET) { request in
+        run(with: base.appendingPathComponent("/me"), type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
                 guard let data = data, error == nil else {
                     completion(.failure(APIErrors.failed))
