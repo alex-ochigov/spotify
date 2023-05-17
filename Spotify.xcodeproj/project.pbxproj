@@ -29,10 +29,11 @@
 		FA10E4B52A0BF3E000FB3404 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E4B42A0BF3E000FB3404 /* Playlist.swift */; };
 		FA10E4B72A0BF3F400FB3404 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E4B62A0BF3F400FB3404 /* AudioTrack.swift */; };
 		FA10E4B92A0BF40800FB3404 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E4B82A0BF40800FB3404 /* Artist.swift */; };
-		FA10E4BB2A0BF41500FB3404 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E4BA2A0BF41500FB3404 /* Profile.swift */; };
+		FA10E4BB2A0BF41500FB3404 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E4BA2A0BF41500FB3404 /* UserProfile.swift */; };
 		FA10E4BF2A0C14FF00FB3404 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA10E4BE2A0C14FF00FB3404 /* README.md */; };
 		FA10E4C12A0C153300FB3404 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FA10E4C02A0C153300FB3404 /* .gitignore */; };
 		FA10E4C42A0C1BD300FB3404 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E4C32A0C1BD300FB3404 /* UIView.swift */; };
+		FAE687532A15172C00A0196B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE687522A15172C00A0196B /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,12 +61,13 @@
 		FA10E4B42A0BF3E000FB3404 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		FA10E4B62A0BF3F400FB3404 /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		FA10E4B82A0BF40800FB3404 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
-		FA10E4BA2A0BF41500FB3404 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		FA10E4BA2A0BF41500FB3404 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		FA10E4BC2A0C083200FB3404 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FA10E4BD2A0C09A200FB3404 /* Debug.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.example.xcconfig; sourceTree = "<group>"; };
 		FA10E4BE2A0C14FF00FB3404 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FA10E4C02A0C153300FB3404 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FA10E4C32A0C1BD300FB3404 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		FAE687522A15172C00A0196B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,8 +155,9 @@
 				FA10E4B82A0BF40800FB3404 /* Artist.swift */,
 				FA10E4B62A0BF3F400FB3404 /* AudioTrack.swift */,
 				FA10E4B42A0BF3E000FB3404 /* Playlist.swift */,
-				FA10E4BA2A0BF41500FB3404 /* Profile.swift */,
+				FA10E4BA2A0BF41500FB3404 /* UserProfile.swift */,
 				FA0DC2012A0E6D62005E4CB7 /* AuthResponse.swift */,
+				FAE687522A15172C00A0196B /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA10E49B2A0BF1D000FB3404 /* SearchViewController.swift in Sources */,
-				FA10E4BB2A0BF41500FB3404 /* Profile.swift in Sources */,
+				FA10E4BB2A0BF41500FB3404 /* UserProfile.swift in Sources */,
 				FA10E4B52A0BF3E000FB3404 /* Playlist.swift in Sources */,
 				FA10E4AF2A0BF38700FB3404 /* AuthManager.swift in Sources */,
 				FA10E4AD2A0BF36B00FB3404 /* SearchResultsViewController.swift in Sources */,
@@ -274,6 +277,7 @@
 				FA10E4832A0BE8F300FB3404 /* HomeViewController.swift in Sources */,
 				FA10E4A12A0BF2B700FB3404 /* AuthViewController.swift in Sources */,
 				FA10E4B12A0BF3AC00FB3404 /* APIClient.swift in Sources */,
+				FAE687532A15172C00A0196B /* Settings.swift in Sources */,
 				FA10E47F2A0BE8F300FB3404 /* AppDelegate.swift in Sources */,
 				FA10E4B92A0BF40800FB3404 /* Artist.swift in Sources */,
 				FA10E49D2A0BF1F300FB3404 /* LibraryViewController.swift in Sources */,

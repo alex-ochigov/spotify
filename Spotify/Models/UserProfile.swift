@@ -10,7 +10,7 @@ import Foundation
 struct UserProfile: Codable {
     let id: String
     let country: String
-    let displayName: String
+    let display_name: String
     let email: String
     let href: String
     let product: String
@@ -23,6 +23,6 @@ struct UserImage: Codable {
 }
 
 struct UserFollowers: Codable {
-    let href: String
+    let href: String?
     let total: Int
 }

@@ -32,6 +32,7 @@ final class APIClient {
                 
                 do {
                     let result = try JSONDecoder().decode(UserProfile.self, from: data)
+                    completion(.success(result))
                 } catch {
                     completion(.failure(error))
                 }
