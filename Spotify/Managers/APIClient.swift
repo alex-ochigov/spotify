@@ -23,34 +23,39 @@ final class APIClient {
     private init() {}
     
     public func getCurrentUserProfile(completion: @escaping (Result<UserProfile, Error>) -> Void) {
-        run(with: base.appendingPathComponent("/me"), type: .GET) { request in
-            let task = URLSession.shared.dataTask(with: request) { data, _, error in
-                guard let data = data, error == nil else {
-                    completion(.failure(APIErrors.failed))
-                    return
-                }
-                
-                do {
-                    let result = try JSONDecoder().decode(UserProfile.self, from: data)
-                    completion(.success(result))
-                } catch {
-                    completion(.failure(error))
-                }
-            }
-            
-            task.resume()
+        let request = createRequest(with: base.appendingPathComponent("/me"), type: .GET)
+        makeRequest(request) { (result: Result<UserProfile, Error>) in
+            completion(result)
         }
     }
     
-    private func run(
-        with url: URL,
-        type: HTTPMethod,
-        completion: @escaping (URLRequest) -> Void) {
-            AuthManager.shared.withValidToken { token in
-                var request = URLRequest(url: url)
-                request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-                request.httpMethod = type.rawValue
-                completion(request)
+    private func makeRequest<T: Codable>(_ request: URLRequest, completion: @escaping (Result<T, Error>) -> Void ) {
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data, error == nil else {
+                completion(.failure(APIErrors.failed))
+                return
+            }
+            
+            do {
+                let result = try JSONDecoder().decode(T.self, from: data)
+                completion(.success(result))
+            } catch {
+                completion(.failure(error))
             }
         }
+        
+        task.resume()
+    }
+    
+    private func createRequest(with url: URL, type: HTTPMethod) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = type.rawValue
+        
+        AuthManager.shared.withValidToken { token in
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        return request
+    }
+
 }
