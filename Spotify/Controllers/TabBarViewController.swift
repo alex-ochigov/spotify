@@ -27,13 +27,16 @@ class TabBarViewController: UITabBarController {
         let searchTab = UINavigationController(rootViewController: searchVC)
         let libraryTab = UINavigationController(rootViewController: libraryVC)
         
+        let tabs = [homeTab, searchTab, libraryTab]
+        
         homeTab.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 1)
         searchTab.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
         libraryTab.tabBarItem = UITabBarItem(title: "Library", image: UIImage(systemName: "music.note.list"), tag: 1)
         
-        homeTab.navigationBar.prefersLargeTitles = true
-        searchTab.navigationBar.prefersLargeTitles = true
-        libraryTab.navigationBar.prefersLargeTitles = true
+        tabs.forEach {
+            $0.navigationBar.prefersLargeTitles = true
+            $0.navigationBar.tintColor = .label
+        }
         
         setViewControllers([homeTab, searchTab, libraryTab], animated: false)
     }
