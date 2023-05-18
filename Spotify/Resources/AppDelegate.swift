@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             welcomeVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
             window.rootViewController = welcomeVC
         } else {
+            AuthManager.shared.refreshTokenIfNeeded(completion: nil)
             window.rootViewController = TabBarViewController()
         }
 
